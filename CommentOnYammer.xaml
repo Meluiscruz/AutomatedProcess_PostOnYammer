@@ -1,0 +1,122 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CommentOnYammer" sap:VirtualizedContainerService.HintSize="533,927" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.MicrosoftTranslatorText</x:String>
+      <x:String>UiPath.MicrosoftTranslatorText.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftTranslatorText</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftTranslatorText.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Comment on Yammer" sap:VirtualizedContainerService.HintSize="509,862" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="https://web.yammer.com/main/dhl.com" Name="urlYammer" />
+      <Variable x:TypeArguments="x:String" Default="https://www.google.com/" Name="urlGoogle" />
+      <Variable x:TypeArguments="x:String" Default="[&quot;ES: Hola, este es un mensaje de prueba escrito por un robot desarrollado en UiPath. Aprovecho este mensaje para saludar a toda la comunidad.&quot;  + Environment.NewLine+ Environment.NewLine]" Name="txtSpanishMessage" />
+      <Variable x:TypeArguments="x:String" Default="[&quot;EN: Hello, this is a test message written by a robot developed in UiPath. I take this message to greet the entire community.&quot;+ Environment.NewLine+ Environment.NewLine]" Name="txtEnglishMessage" />
+      <Variable x:TypeArguments="x:String" Default="[&quot;PT: Olá, esta é uma mensagem de teste escrita por um robô desenvolvido em UiPath. Aproveito esta mensagem para saudar toda a comunidade.&quot;+ Environment.NewLine + Environment.NewLine]" Name="txtPortugueseMessage" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.NewLine + Environment.NewLine +&quot;This message was submitted on &quot;]" Name="txtWithLovePt1" />
+      <Variable x:TypeArguments="x:String" Default="[&quot;You can find the source code of this bot in my GitHub repo: &quot; + Environment.NewLine]" Name="txtGitHubPromo" />
+      <Variable x:TypeArguments="x:String" Default="https://github.com/Meluiscruz/AutomatedProcess_PostOnYammer" Name="urlGitHubRepo" />
+      <Variable x:TypeArguments="s:DateTime" Name="Today" />
+      <Variable x:TypeArguments="x:String" Default=" … from Mexico with love &lt;3." Name="txtWithLovePt2" />
+      <Variable x:TypeArguments="x:String" Default="DSC_LATAM_RPA" Name="txtRPACommunity" />
+      <Variable x:TypeArguments="x:String" Default="mr robot" Name="txtGIFstring" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open Firefox and go to homepage" sap:VirtualizedContainerService.HintSize="467,770" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[urlGoogle]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Go to Yammer" sap:VirtualizedContainerService.HintSize="376,669" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[urlYammer]" />
+            <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TypeIntoCommentBox workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="TypeIntoCommentBox.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="s:DateTime" x:Key="Today">[Today]</InOutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtSpanishMessage">[txtSpanishMessage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtEnglishMessage">[txtEnglishMessage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtPortugueseMessage">[txtPortugueseMessage]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtGitHubPromo">[txtGitHubPromo]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="urlGitHubRepo">[urlGitHubRepo]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtWithLovePt1">[txtWithLovePt1]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="txtWithLovePt2">[txtWithLovePt2]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TypeIntoCommunityTextBox workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="TypeIntoCommunityTextBox.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="txtRPACommunity">[txtRPACommunity]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SelectGIFAndPost workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SelectGIFAndPost.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="txtGIFstring">[txtGIFstring]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
